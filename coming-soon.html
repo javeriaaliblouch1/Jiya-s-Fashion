@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon - Jiya's Fashion</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="icon search-icon" id="search-icon">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="logo">
+                <img src="img/LOGO 2.png" alt="Jiya's Fashion Logo">
+            </div>
+            <div class="icon user-icon" id="user-icon">
+                <i class="fas fa-user-circle"></i>
+            </div>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="coming-soon.html">New In</a></li>
+                <li><a href="coming-soon.html">Dresses</a></li>
+                <li><a href="coming-soon.html">Skirts</a></li>
+                <li><a href="coming-soon.html">Tops</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="search-overlay" class="search-overlay">
+        <button id="close-search" class="close-btn">&times;</button>
+        <div class="search-overlay-content">
+            <form action="#" class="search-overlay-form">
+                <input type="search" placeholder="Search" class="search-overlay-input">
+                <button type="submit" class="search-overlay-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <main>
+        <div class="static-page-container coming-soon-container">
+            <h1 class="coming-soon-title">Coming Soon</h1>
+            <p class="coming-soon-text">We are working hard to bring you new collections. Stay tuned!</p>
+        </div>
+        
+        <section class="subscribe-section">
+            <h2 class="section-title-subscribe">Subscribe to our emails</h2>
+            <p>Be the first to know about new collections and exclusive offers.</p>
+            <form class="subscribe-form">
+                <input type="email" placeholder="Email" class="subscribe-input">
+                <button typea="submit" class="subscribe-button">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Policies</h3>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="refund.html">Refund Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Quick links</h3>
+                <ul>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Get in touch</h3>
+                <ul>
+                    <li><a href="tel:+13052349898">+1 305-234-9898</a></li>
+                    <li><a href="mailto:hello@jiyasfashion.com">hello@jiyasfashion.com</a></li>
+                    <li><a href="#">2734 Summit Rd.</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <img src="img/LOGO 2.png" alt="Jiya's Fashion Logo" class="footer-logo">
+            </div>
+        </div>
+        <div class="footer-social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Jiya's Fashion - Site Design - All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            const searchIcon = document.getElementById('search-icon');
+            const searchOverlay = document.getElementById('search-overlay');
+            const closeSearch = document.getElementById('close-search');
+
+            if (searchIcon && searchOverlay && closeSearch) {
+                searchIcon.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    searchOverlay.classList.add('active');
+                });
+                closeSearch.addEventListener('click', () => {
+                    searchOverlay.classList.remove('active');
+                });
+            }
+            
+            const userIcon = document.getElementById('user-icon');
+            const loginModal = document.getElementById('login-modal');
+            const closeModal = document.getElementById('close-modal');
+            
+            const loginForm = document.getElementById('login-form-container');
+            const createAccountForm = document.getElementById('create-account-form-container');
+            const showCreateAccountLink = document.getElementById('show-create-account-link');
+            const showLoginLink = document.getElementById('show-login-link');
+
+            if (userIcon && loginModal && closeModal && loginForm && createAccountForm && showCreateAccountLink && showLoginLink) {
+                userIcon.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    loginModal.classList.add('active');
+                    loginForm.classList.add('active-form');
+                    createAccountForm.classList.remove('active-form');
+                });
+
+                closeModal.addEventListener('click', () => {
+                    loginModal.classList.remove('active');
+                    loginForm.classList.remove('active-form');
+                    createAccountForm.classList.remove('active-form');
+                });
+
+                loginModal.addEventListener('click', (e) => {
+                    if (e.target === loginModal) {
+                        loginModal.classList.remove('active');
+                        loginForm.classList.remove('active-form');
+                        createAccountForm.classList.remove('active-form');
+                    }
+                });
+                
+                showCreateAccountLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    loginForm.classList.remove('active-form');
+                    createAccountForm.classList.add('active-form');
+                });
+                
+                showLoginLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    createAccountForm.classList.remove('active-form');
+                    loginForm.classList.add('active-form');
+                });
+            }
+
+        });
+    </script>
+
+    <div id="login-modal" class="modal-overlay-container">
+        <div class="modal-content">
+            <button id="close-modal" class="close-btn">&times;</button>
+            
+            <div id="login-form-container" class="modal-form-container active-form">
+                <h2>Login</h2>
+                <form action="#" class="contact-form">
+                    <div class="field">
+                        <input type="email" placeholder="Email *" required>
+                    </div>
+                    <div class="field">
+                        <input type="password" placeholder="Password *" required>
+                    </div>
+                    <button type="submit" class="btn-details">Login</button>
+                </form>
+                <p class="modal-switch">Don't have an account? <a href="#" id="show-create-account-link">Create one</a></p>
+            </div>
+
+            <div id="create-account-form-container" class="modal-form-container">
+                <h2>Create Account</h2>
+                <form action="#" class="contact-form">
+                    <div class="field">
+                        <input type="text" placeholder="Name *" required>
+                    </div>
+                    <div class="field">
+                        <input type="email" placeholder="Email *" required>
+                    </div>
+                    <div class="field">
+                        <input type="password" placeholder="Password *" required>
+                    </div>
+                    <button type="submit" class="btn-details">Create</button>
+                </form>
+                <p class="modal-switch">Already have an account? <a href="#" id="show-login-link">Login</a></p>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
