@@ -699,3 +699,112 @@ footer {
     font-weight: bold;
     text-decoration: underline;
 }
+
+/* --- NAYE RESPONSIVE STYLES --- */
+
+@media screen and (max-width: 768px) {
+    body {
+        padding: 0 15px;
+    }
+
+    .header-top {
+        padding: 15px 0 5px 0;
+    }
+
+    .logo img {
+        height: 60px;
+    }
+
+    .icon {
+        font-size: 1.1rem;
+    }
+
+    nav ul li a {
+        font-size: 0.8rem;
+        padding: 8px 10px;
+    }
+
+    .hero-carousel {
+        height: 300px;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .categories {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        overflow-x: hidden;
+    }
+
+    .product-card {
+        flex-basis: auto;
+    }
+
+    .product-image {
+        height: 350px;
+    }
+
+    .product-detail-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .product-detail-gallery {
+        flex-basis: 100%;
+    }
+
+    .product-detail-info {
+        flex-basis: 100%;
+        padding-left: 0;
+    }
+
+    .subscribe-section {
+        padding: 40px 15px;
+        margin: 20px -15px 0 -15px;
+    }
+
+    .section-title-subscribe {
+        font-size: 2rem;
+    }
+
+    footer {
+        padding: 30px 15px 15px 15px;
+        margin: 0 -15px -15px -15px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-column ul {
+        padding: 0;
+    }
+
+    .footer-logo {
+        margin: 0 auto;
+    }
+    
+    .modal-content {
+        width: 90%;
+        padding: 25px;
+    }
+
+    .search-overlay-input {
+        font-size: 1.5rem;
+    }
+
+    .close-btn {
+        top: 15px;
+        right: 20px;
+        font-size: 2.5rem;
+    }
+}
